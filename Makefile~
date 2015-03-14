@@ -1,0 +1,5 @@
+
+
+all:
+
+	g++ main.c read_map.c --static -o open

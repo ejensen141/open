@@ -1,0 +1,16 @@
+####Readme Open command for linux ####
+
+
+
+
+
+### Installing ###
+
+to compile and install type:
+
+make install
+
+
+
+native compile is static, if you want to dynamiclly compile 
+(smaller binary) you can change the C_FLAGS in the makefile

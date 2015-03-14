@@ -1,0 +1,8 @@
+.txt "/usr/bin/gedit"
+default "/usr/bin/gedit"
+.c "/usr/bin/gedit"
+.h "/usr/bin/gedit"
+.cpp "/usr/bin/gedit"
+.pdf "/usr/bin/evince"
+.html "/usr/bin/gedit"
+.pcb "/usr/bin/pcb"
