@@ -3,11 +3,10 @@
 #include<unistd.h>
 #include<signal.h>
 #include<string.h>
-//#include<iostream>
 #include "read_map.h"
 #include "open.h"
 
-using namespace std;
+
 
 int main( int argc, char  *argv[])
 {
@@ -28,13 +27,7 @@ for(i =1; i<argc; i++)
 strcat(file,argv[1]);
 }
 
-
-
-
-
 open_process(file);
-
-
 
 }
 else 
@@ -43,9 +36,6 @@ printf(" Usage:   open <filename>    see manual for more instructions \n");
 
 
 }
-
-
-
 
 return 0;
 }

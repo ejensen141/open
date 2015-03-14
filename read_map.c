@@ -9,23 +9,19 @@
 #include <pwd.h>
 
 const char* getprogram(char *file){
-int N = 1000;
-const char* program;
-program = "hello";
-char *extension;
+int N = 1000; // number of extensions allowed to search for
+const char* program = "program"; 
+char *extension; // the file extension
 int index = -1;
-//std::cout<<file<<std::endl;
-	
-
 
 
 	struct type types[N];
 	int end =0;
 	int num =0;
 	
-	std::string prog;
-	std::string ext;
-	std::string line;
+	std::string prog; // program to run
+	std::string ext;  //  extension for that program
+	std::string line; // input line from settings file
 	std::string def;  // set default program 
 	
 	std::size_t pos =1;
@@ -36,7 +32,7 @@ int index = -1;
 	
 	settingsFile.append("/.extension_map.setting");
 
-	//std::cout<<settingsFile<<std::endl;
+	
 	std::ifstream fp (settingsFile.c_str());
 	
 	while(getline (fp,line) )
@@ -53,22 +49,18 @@ int index = -1;
 		{
 			def = prog;
 		}
-		//ext = strtok(buffer," ");
-		//prog= strtok(NULL," ");
+		
 		
 		
 		types[num].ext = ext;
 		types[num].prog = prog;
 
-
-		
-		//printf("first ==%s second ==%s \n",types[num].ext,types[num].prog);
 		num++;
 	}
 
 	end = num;
 
-
+	// debug purposes 
 	/*for(int jj =0; jj<end; jj++)
 	{
 		std::cout<<types[jj].ext<<"	"<<types[jj].prog<<std::endl;
@@ -78,36 +70,30 @@ int index = -1;
 	index = (int)(strchr(file,'.')-file);
 
 	
-if(index>0 && index <1000)
-{
-	extension = strrchr(file,'.');
-
-
-	for(int j =0; j<end; j++)
+	if(index>0 && index <1000)
 	{
+		extension = strrchr(file,'.');
 
-	if(strcmp(extension,types[j].ext.c_str())==0)
-	{
-	return types[j].prog.c_str();
-	}
 
-	}
+		for(int j =0; j<end; j++)
+		{
+
+		if(strcmp(extension,types[j].ext.c_str())==0)
+		{
+		return types[j].prog.c_str();
+		}
+	
+		}
 
 	
-return def.c_str();
+	return def.c_str();
 
 
-}
+	}
 	else
 	{
 	 return def.c_str();
 	}
-	
-
-	
-
-	
-
 
 
 return program;
