@@ -14,7 +14,6 @@ install:all
 clean:
 
 	rm open
-	rm *.o
-	
+
 
 

@@ -9,7 +9,7 @@
 
 #include "read_map.h"
 
-void open_process(char * file);
+void open_process(char * file, char * flags);
 
 
 #endif

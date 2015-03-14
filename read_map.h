@@ -18,7 +18,7 @@ struct type{
 };
 
 
-const char* getprogram(char *file);
+const char* getprogram(char *file, char *flag);
 
 
 int read_config_file(struct type *types[]); 

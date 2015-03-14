@@ -11,10 +11,18 @@
 int main( int argc, char  *argv[])
 {
 
+int start =1;
 if(argc>1)
 {
 char *file = new char[argc];
+char *flag;
 int i =0;
+
+if(strcmp(argv[1],"-f") == 0)
+{
+start =2; // folder
+flag = argv[1];
+}
 
 char cwd[1024];
 getcwd(cwd,sizeof(cwd));
@@ -22,18 +30,20 @@ getcwd(cwd,sizeof(cwd));
 file = cwd;
 strcat(file,"/");
 
-for(i =1; i<argc; i++)
-{
-strcat(file,argv[1]);
-}
 
-open_process(file);
+for(i=start; i<argc; i++)
+{
+strcat(file,argv[start]);
+}
+//printf("%s",file);
+
+open_process(file,flag);
 
 }
 else 
 {
 printf(" Usage:   open <filename>    see manual for more instructions \n");
-
+printf(" -f to open a folder");
 
 }
 

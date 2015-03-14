@@ -7,10 +7,10 @@
 #include <fcntl.h>
 
 
-void open_process(char * file)
+void open_process(char * file, char* flags)
 {
 const char * path;
-path = getprogram(file);
+path = getprogram(file,flags);
 
 
 pid_t childpid;

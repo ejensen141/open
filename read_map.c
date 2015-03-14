@@ -8,7 +8,7 @@
 #include <sys/types.h>
 #include <pwd.h>
 
-const char* getprogram(char *file){
+const char* getprogram(char *file, char *flag){
 int N = 1000; // number of extensions allowed to search for
 const char* program = "program"; 
 char *extension; // the file extension
@@ -68,20 +68,42 @@ int index = -1;
 	*/
 	
 	index = (int)(strchr(file,'.')-file);
+	
+		if(strcmp(flag,"") != 0)
+		{
+		for(int j =0; j<end; j++)
+		{
+
+		
+		
+		if(strcmp(flag,types[j].ext.c_str())==0)
+		{
+		return types[j].prog.c_str();
+		}
+
+		
+	
+		}
+
+		}
 
 	
 	if(index>0 && index <1000)
 	{
 		extension = strrchr(file,'.');
-
-
+		
+		
 		for(int j =0; j<end; j++)
 		{
 
+		
+		
 		if(strcmp(extension,types[j].ext.c_str())==0)
 		{
 		return types[j].prog.c_str();
 		}
+
+		
 	
 		}
 
@@ -92,6 +114,8 @@ int index = -1;
 	}
 	else
 	{
+	
+	
 	 return def.c_str();
 	}
 
