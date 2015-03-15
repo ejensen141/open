@@ -1,7 +1,9 @@
 ####Readme Open command for linux ####
 
 
-
+##Dependencies##
+you must have gksudo    (gksu package on archlinux) 
+for sopen to work properly
 
 
 ### Installing ###
