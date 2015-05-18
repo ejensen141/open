@@ -26,7 +26,7 @@ int index = -1;
 	
 	std::size_t pos =1;
 	std::size_t last = 0;
-	std::string homedir =getenv("HOME"); 
+	std::string homedir = getenv("HOME"); 
 	std::string settingsFile = homedir;
 	
 	
