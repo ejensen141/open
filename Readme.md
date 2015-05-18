@@ -18,8 +18,9 @@ for sopen to work properly
 
 to compile and install type:
 
+```bash
 make install
-
+```
 native compile is static, if you want to dynamiclly compile 
 (smaller binary) you can change the C_FLAGS in the makefile
 
